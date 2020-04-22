@@ -1,0 +1,11 @@
+Boa tarde pessoal, segue os links do code reviews:
+
+* Primeiro módulo
+	Fibonacci - https://www.codenation.dev/code-review/#/java-0/uL329iqZR
+	Criptografia de Júlio César - https://www.codenation.dev/code-review/#/java-6/C1bkiZqWR
+	Calculadora de Salário Líquido - https://www.codenation.dev/code-review/#/java-13/IhTlSZ3ZR
+
+* Segundo módulo
+	Gerenciador de Times de Futebol - https://www.codenation.dev/code-review/#/java-1/L9Lrj2qWg
+	Controle de estacionamento - https://www.codenation.dev/code-review/#/java-7/t9qc-TqWR
+	Media, Moda e Mediana - https://www.codenation.dev/code-review/#/java-14/laE2i03Zg

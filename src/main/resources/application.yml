@@ -1,0 +1,31 @@
+# Server
+server:
+  port: 8080
+  servlet:
+    context-path: /codenation
+    
+# Database
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost/codenation_logger
+    username: postgres
+    password: postgres
+  jpa:
+    show-sql: false
+    properties:
+      hibernate.temp.use_jdbc_metadata_defaults: false
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+#    hibernate:
+#      ddl-auto: update
+      
+
+# Security 
+security:
+  enabled: false
+  enable-https: false
+  cli: codenation_web
+  cli2: codenation_mobile
+  secret: $2a$10$4CvdsdqhNu/A1ERtlyqOYeSb@UjL7xCbPclZ7k3o6HvWw0oU3v1u
+  signing-key: $2a$10$4CvdsdqhNu/A1ERtlyqOYeSb@UjL7xCbPclZ7k3o6HvWw0oU3v1u
+  access-token-validity-seconds: 30
+  refresh-token-validity-seconds: 2592000
