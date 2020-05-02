@@ -1,14 +1,18 @@
 package api.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.util.Assert;
-
+import api.model.enums.Level;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
@@ -17,26 +21,27 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 @Entity
-public class GrantedAuthority implements org.springframework.security.core.GrantedAuthority {
-
-	private static final long serialVersionUID = 1L;
+public class Event {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
-	@Size(max = 45)
-	private String role;
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private Level level;
 	
-	public GrantedAuthority(String role) {
-		Assert.hasText(role, "A granted authority textual representation is required");
-		this.role = role;
-	}
-
-	@Override
-	public String getAuthority() {
-		return role;
-	}
+	@NotBlank
+	@Size(max = 255)
+	private String description;
+	
+	@NotBlank
+	@Size(max = 150)
+	private String source;
+	
+	@NotNull
+	private LocalDateTime date;
+	
+	private Integer number;
 
 }

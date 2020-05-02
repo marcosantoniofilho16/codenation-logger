@@ -11,6 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.security.core.userdetails.User;
 
@@ -31,27 +34,35 @@ public class Users extends User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@NotBlank
+	@Size(max = 45)
 	private String password;
 
+	@NotBlank
+	@Size(max = 45)
 	private String username;
 
 	@ManyToMany
 	@Getter(AccessLevel.NONE)
 	private Set<GrantedAuthority> authorities;
 
+	@NotNull
 	private Boolean accountNonExpired;
 
+	@NotNull
 	private Boolean accountNonLocked;
 
+	@NotNull
 	private Boolean credentialsNonExpired;
 
+	@NotNull
 	private Boolean enabled;
 
 	@Transient
 	private Map<String, Object> info = new HashMap<>();
 	
 	public Users() {
-		super(" ", " ", new ArrayList<>());
+		super(" ", " ", true, true, true, true, new ArrayList<>());
 	}
 
 	public Users(String username, String password, Set<GrantedAuthority> authorities) {
