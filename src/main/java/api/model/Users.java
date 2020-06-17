@@ -1,11 +1,12 @@
 package api.model;
 
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,7 +16,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -26,7 +30,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 @Entity
-public class Users extends User {
+public class Users implements UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
@@ -35,57 +39,59 @@ public class Users extends User {
 	private Long id;
 
 	@NotBlank
-	@Size(max = 45)
+	@JsonIgnore
 	private String password;
 
 	@NotBlank
 	@Size(max = 45)
 	private String username;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@Getter(AccessLevel.NONE)
-	private Set<GrantedAuthority> authorities;
+	private Set<Role> authorities;
 
 	@NotNull
+	@Getter(AccessLevel.NONE)
 	private Boolean accountNonExpired;
 
 	@NotNull
+	@Getter(AccessLevel.NONE)
 	private Boolean accountNonLocked;
 
 	@NotNull
+	@Getter(AccessLevel.NONE)
 	private Boolean credentialsNonExpired;
 
 	@NotNull
+	@Getter(AccessLevel.NONE)
 	private Boolean enabled;
 
 	@Transient
 	private Map<String, Object> info = new HashMap<>();
 	
-	public Users() {
-		super(" ", " ", true, true, true, true, new ArrayList<>());
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return authorities;
 	}
 
-	public Users(String username, String password, Set<GrantedAuthority> authorities) {
-		super(username, password, authorities);
+	@Override
+	public boolean isAccountNonExpired() {
+		return accountNonExpired;
 	}
-	
-	public Users(String username, String password, boolean enabled,
-			boolean accountNonExpired, boolean credentialsNonExpired,
-			boolean accountNonLocked, Set<GrantedAuthority> authorities) {
-		super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
 
-		if (((username == null) || "".equals(username)) || (password == null)) {
-			throw new IllegalArgumentException(
-					"Cannot pass null or empty values to constructor");
-		}
+	@Override
+	public boolean isAccountNonLocked() {
+		return accountNonLocked;
+	}
 
-		this.username = username;
-		this.password = password;
-		this.enabled = enabled;
-		this.accountNonExpired = accountNonExpired;
-		this.credentialsNonExpired = credentialsNonExpired;
-		this.accountNonLocked = accountNonLocked;
-		this.authorities = authorities;
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return credentialsNonExpired;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return enabled;
 	}
 
 }

@@ -1,8 +1,8 @@
 
 
-CREATE TABLE granted_authority (
+CREATE TABLE role (
     id bigserial NOT NULL,
-    role varchar(255)
+    authority varchar(255)
 );
 
 
@@ -23,8 +23,8 @@ CREATE TABLE users_authorities (
 );
 
 
-ALTER TABLE ONLY granted_authority
-    ADD CONSTRAINT granted_authority_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY role
+    ADD CONSTRAINT role_pkey PRIMARY KEY (id);
 
 
 ALTER TABLE ONLY users_authorities
@@ -40,5 +40,5 @@ ALTER TABLE ONLY users_authorities
 
 
 ALTER TABLE ONLY users_authorities
-    ADD CONSTRAINT fk_users_authorities_authorities FOREIGN KEY (authorities_id) REFERENCES granted_authority(id);
+    ADD CONSTRAINT fk_users_authorities_authorities FOREIGN KEY (authorities_id) REFERENCES role(id);
 

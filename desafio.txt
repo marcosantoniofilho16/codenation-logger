@@ -1,14 +1,34 @@
 Oi pessoal, segue os links do code reviews:
 
 * Primeiro módulo
-	Fibonacci - https://www.codenation.dev/code-review/#/java-0/uL329iqZR
-	Criptografia de Júlio César - https://www.codenation.dev/code-review/#/java-6/C1bkiZqWR
-	Calculadora de Salário Líquido - https://www.codenation.dev/code-review/#/java-13/IhTlSZ3ZR
+	* Fibonacci - https://www.codenation.dev/code-review/#/java-0/uL329iqZR
+	* Criptografia de Júlio César - https://www.codenation.dev/code-review/#/java-6/C1bkiZqWR
+	* Calculadora de Salário Líquido - https://www.codenation.dev/code-review/#/java-13/IhTlSZ3ZR
 
 * Segundo módulo
-	Gerenciador de Times de Futebol - https://www.codenation.dev/code-review/#/java-1/L9Lrj2qWg
-	Controle de estacionamento - https://www.codenation.dev/code-review/#/java-7/t9qc-TqWR
-	Media, Moda e Mediana - https://www.codenation.dev/code-review/#/java-14/laE2i03Zg
+	* Gerenciador de Times de Futebol - https://www.codenation.dev/code-review/#/java-1/L9Lrj2qWg
+	* Controle de estacionamento -https://www.codenation.dev/code-review/#/java-7/t9qc-TqWR
+	* Media, Moda e Mediana - https://www.codenation.dev/code-review/#/java-14/laE2i03Zg
 
 * Terceiro módulo
-	Utilitário - Calculador de atributos de Classe - https://www.codenation.dev/code-review/#/java-8/-pvVCz6Wg
+	* Utilitário - Calculador de atributos de Classe - https://www.codenation.dev/code-review/#/java-8/-pvVCz6Wg
+	
+* Quarto módulo
+	* Criando Entidades de Banco de Dados em Java - https://www.codenation.dev/code-review/#/java-9/wV43SmRMR
+	
+* Quinto módulo
+	* Criando e manipulando entidades no Banco de dados com Spring - https://www.codenation.dev/code-review/#/java-10/5yqN8-6ZR
+	* Order Service - https://www.codenation.dev/code-review/#/java-15/cGTPAPeWR
+	
+* Sexto módulo
+	* Criando endpoints com Spring - https://www.codenation.dev/code-review/#/java-11/jnOC5EgGg
+	* Gerador de frases do Monty Python utilizando Spring Boot e JPA - https://www.codenation.dev/code-review/#/java-5/HJagXPRGR
+	
+* Sétimo módulo
+	* Oauth2 com spring - https://www.codenation.dev/code-review/#/java-12/q7vm8hkMR
+
+* Oitavo módulo
+	* Refatorando Formas de Pagamento - https://www.codenation.dev/code-review/#/java-16/O16yulkGR
+	
+	
+		

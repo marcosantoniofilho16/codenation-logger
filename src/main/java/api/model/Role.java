@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import org.springframework.util.Assert;
+import org.springframework.security.core.GrantedAuthority;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,7 +17,7 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 @Entity
-public class GrantedAuthority implements org.springframework.security.core.GrantedAuthority {
+public class Role implements GrantedAuthority {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -27,16 +27,11 @@ public class GrantedAuthority implements org.springframework.security.core.Grant
 	
 	@NotBlank
 	@Size(max = 45)
-	private String role;
-	
-	public GrantedAuthority(String role) {
-		Assert.hasText(role, "A granted authority textual representation is required");
-		this.role = role;
-	}
+	private String authority;
 
 	@Override
 	public String getAuthority() {
-		return role;
+		return authority;
 	}
 
 }

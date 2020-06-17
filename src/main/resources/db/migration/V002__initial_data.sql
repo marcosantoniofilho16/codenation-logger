@@ -1,6 +1,6 @@
 
-INSERT INTO granted_authority(id, role) VALUES (1, 'ROLE_USER');
-INSERT INTO granted_authority(id, role) VALUES (2, 'ROLE_ADMIN');
+INSERT INTO role(id, authority) VALUES (1, 'ROLE_USER');
+INSERT INTO role(id, authority) VALUES (2, 'ROLE_ADMIN');
 
 INSERT INTO users(
 	id, account_non_expired, account_non_locked, credentials_non_expired, enabled, password, username)
