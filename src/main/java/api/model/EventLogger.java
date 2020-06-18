@@ -3,6 +3,7 @@ package api.model;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
@@ -12,20 +13,29 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-import api.model.enums.Level;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-@Getter
-@Setter
-@Accessors(chain = true)
+import api.model.enums.Level;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
+@Data
+@EqualsAndHashCode(of = "id")
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-public class Event {
+@EntityListeners(AuditingEntityListener.class)
+public class EventLogger {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@CreatedDate
+    private LocalDateTime createdAt;
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
@@ -33,7 +43,10 @@ public class Event {
 	
 	@NotBlank
 	@Size(max = 255)
-	private String description;
+	private String eventDescription;
+	
+	@NotBlank
+	private String eventLogger;
 	
 	@NotBlank
 	@Size(max = 150)
@@ -42,6 +55,7 @@ public class Event {
 	@NotNull
 	private LocalDateTime date;
 	
-	private Integer number;
+	@NotNull
+	private Integer quantity;
 
 }
