@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,17 +19,21 @@ import javax.validation.constraints.Size;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@Accessors(chain = true)
+@Data
+@EqualsAndHashCode(of = "id")
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Users implements UserDetails {
 
@@ -44,6 +49,7 @@ public class Users implements UserDetails {
 
 	@NotBlank
 	@Size(max = 45)
+	@Column(unique=true)
 	private String username;
 
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -72,6 +78,10 @@ public class Users implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return authorities;
+	}
+	
+	public void setNonEncryptedPassword(String password) {
+		this.password = new BCryptPasswordEncoder().encode(password);
 	}
 
 	@Override

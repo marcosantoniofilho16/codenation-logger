@@ -41,4 +41,7 @@ ALTER TABLE ONLY users_authorities
 
 ALTER TABLE ONLY users_authorities
     ADD CONSTRAINT fk_users_authorities_authorities FOREIGN KEY (authorities_id) REFERENCES role(id);
+	
+ALTER TABLE ONLY users
+    ADD CONSTRAINT uk_usuario UNIQUE (username);
 

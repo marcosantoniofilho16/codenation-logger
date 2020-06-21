@@ -9,13 +9,15 @@ import javax.validation.constraints.Size;
 
 import org.springframework.security.core.GrantedAuthority;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.Accessors;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
-@Getter
-@Setter
-@Accessors(chain = true)
+@Data
+@EqualsAndHashCode(of = "id")
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Role implements GrantedAuthority {
 
