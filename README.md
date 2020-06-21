@@ -11,7 +11,11 @@ Abaixo estÃ£o os requisitos desta API, o time terÃ¡ total liberdade para tomar a
 
 ### Tecnologia
 
--   Utilizar a tecnologia base da aceleraÃ§Ã£o para o desenvolvimento (Exemplo: Java, Node.js)
+- [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html) ```1.8```
+- [Spring Boot](https://spring.io/projects/spring-boot) ```2.2.6.RELEASE```
+- [Gradle](https://maven.apache.org/) ```6.3```
+- [PostgreSQL](https://www.postgresql.org/) ```10.13``` 
+- [HAL-Explorer](https://github.com/toedter/hal-explorer) ```0.12.0```
 
 ### Premissas
 
@@ -29,3 +33,54 @@ Abaixo estÃ£o os requisitos desta API, o time terÃ¡ total liberdade para tomar a
 -   Deve suportar OrdenaÃ§Ã£o por diferentes tipos de atributos
 -   A consulta de listagem  **nÃ£o deve retornar os LOGs**  dos Eventos
 -   Deve permitir a busca de um evento por um ID, dessa maneira exibindo o LOG desse evento em especÃ­fico
+
+## Instalação
+
+A aplicação foi configurada pra ser executada com o Gradle, portanto será necessário a instalação dessa ferramenta. 
+
+> Instalando o Gradle: [https://gradle.org/install/](https://gradle.org/install/).
+
+### Clonando o repositório:
+
+```bash
+$ git clone https://github.com/marcosantoniofilho16/codenation-logger.git
+```
+
+### Compilando e empacotando a aplicação
+
+```bash
+$ cd codenation-logger
+$ ./gradlew build
+```
+
+### Testando a aplicação
+
+```bash
+$ cd codenation-logger
+$ ./gradlew test
+```
+
+### Executando a aplicação
+
+```bash
+$ cd codenation-logger
+$ ./gradlew bootRun
+```
+
+> Para testar se a aplicação está em execução, acesse o endereço ```http://localhost:8080/api/```. A resposta deve ser um JSON com os recursos disponíveis na API.
+
+## Endpoints
+
+Após executar a aplicação, você pode acessar a documentação da API, contendo os endpoints implementados, no endereço ```http://localhost:8080/api/explorer/index.html```.
+
+## Diagrama do Banco de Dados
+
+![Imagem representando as tabelas do banco de dados](diagram.png)
+
+## Deploy
+
+Para fins de demonstração de funcionamento, foi feito o deploy da aplicação nas plataformas [Heroku](https://www.heroku.com/).
+
+| Plataforma | Serviço | Link |
+| :--- | :--- | :--- |
+| Heroku | Back-end | [https://codenation-logger.herokuapp.com/api](https://codenation-logger.herokuapp.com/api) |
