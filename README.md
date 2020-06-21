@@ -3,9 +3,9 @@
 
 ## Objetivo
 
-Em projetos modernos √© cada vez mais comum o uso de arquiteturas baseadas em servi√ßos ou microsservi√ßos. Nestes ambientes complexos, erros podem surgir em diferentes camadas da aplica√ß√£o (backend, frontend, mobile, desktop) e mesmo em servi√ßos distintos. Desta forma, √© muito importante que os desenvolvedores possam centralizar todos os registros de erros em um local, de onde podem monitorar e tomar decis√µes mais acertadas. Neste projeto vamos implementar uma API Rest para centralizar registros de erros de aplica√ß√µes.
+Em projetos modernos È cada vez mais comum o uso de arquiteturas baseadas em serviÁos ou microsserviÁos. Nestes ambientes complexos, erros podem surgir em diferentes camadas da aplicaÁ„o (backend, frontend, mobile, desktop) e mesmo em serviÁos distintos. Desta forma, È muito importante que os desenvolvedores possam centralizar todos os registros de erros em um local, de onde podem monitorar e tomar decisıes mais acertadas. Neste projeto vamos implementar uma API Rest para centralizar registros de erros de aplicaÁıes.
 
-Abaixo est√£o os requisitos desta API, o time ter√° total liberdade para tomar as decis√µes t√©cnicas e de arquitetura da API, desde que atendam os requisitos abaixo.
+Abaixo est„o os requisitos desta API, o time ter· total liberdade para tomar as decisıes tÈcnicas e de arquitetura da API, desde que atendam os requisitos abaixo.
 
 ## API
 
@@ -21,18 +21,18 @@ Abaixo est√£o os requisitos desta API, o time ter√° total liberdade para tomar a
 
 -   A API deve ser pensada para atender diretamente um front-end
 -   Deve ser capaz de gravar os logs de erro em um banco de dados relacional
--   O acesso a ela deve ser permitido apenas por requisi√ß√µes que utilizem um token de acesso v√°lido
+-   O acesso a ela deve ser permitido apenas por requisiÁıes que utilizem um token de acesso v·lido
 
 ### Funcionalidades
 
 -   Deve permitir a autentica√ß√£o do sistema que deseja utilizar a API gerando o Token de Acesso
 -   Pode ser acessado por multiplos sistemas
--   Deve permitir gravar registros de eventos de log salvando informa√ß√µes de  **Level(error, warning, info), Descri√ß√£o do Evento, LOG do Evento, ORIGEM(Sistema ou Servi√ßo que originou o evento), DATA(Data do evento), QUANTIDADE(Quantidade de Eventos de mesmo tipo)**
--   Deve permitir a listagem dos eventos juntamente com a filtragem de eventos por qualquer par√¢metro especificado acima
--   Deve suportar Pagina√ß√£o
--   Deve suportar Ordena√ß√£o por diferentes tipos de atributos
--   A consulta de listagem  **n√£o deve retornar os LOGs**  dos Eventos
--   Deve permitir a busca de um evento por um ID, dessa maneira exibindo o LOG desse evento em espec√≠fico
+-   Deve permitir gravar registros de eventos de log salvando informaÁıes de **Level(error, warning, info), DescriÁ„o do Evento, LOG do Evento, ORIGEM(Sistema ou ServiÁo que originou o evento), DATA(Data do evento), QUANTIDADE(Quantidade de Eventos de mesmo tipo)**
+-   Deve permitir a listagem dos eventos juntamente com a filtragem de eventos por qualquer par‚metro especificado acima
+-   Deve suportar PaginaÁ„o
+-   Deve suportar OrdenaÁ„o por diferentes tipos de atributos
+-   A consulta de listagem **n„o deve retornar os LOGs** dos Eventos
+-   Deve permitir a busca de um evento por um ID, dessa maneira exibindo o LOG desse evento em especÌfico
 
 ## InstalaÁ„o
 
