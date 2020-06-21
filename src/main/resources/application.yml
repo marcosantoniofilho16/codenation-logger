@@ -1,8 +1,9 @@
+
 # Server
 server:
   port: 8080
   servlet:
-    context-path: /codenation
+    context-path: /api
     
 # Database
 spring:
@@ -23,8 +24,8 @@ spring:
 
 # Security 
 security:
-  enabled: false
-  enable-https: false
+  enabled: true
+  enable-https: true
   cli: codenation_web
   cli2: codenation_mobile
   secret: $2a$10$4CvdsdqhNu/A1ERtlyqOYeSb@UjL7xCbPclZ7k3o6HvWw0oU3v1u
