@@ -25,7 +25,7 @@ Abaixo estão os requisitos desta API, o time terá total liberdade para tomar as 
 
 ### Funcionalidades
 
--   Deve permitir a autenticaÃ§Ã£o do sistema que deseja utilizar a API gerando o Token de Acesso
+-   Deve permitir a autenticação do sistema que deseja utilizar a API gerando o Token de Acesso
 -   Pode ser acessado por multiplos sistemas
 -   Deve permitir gravar registros de eventos de log salvando informações de **Level(error, warning, info), Descrição do Evento, LOG do Evento, ORIGEM(Sistema ou Serviço que originou o evento), DATA(Data do evento), QUANTIDADE(Quantidade de Eventos de mesmo tipo)**
 -   Deve permitir a listagem dos eventos juntamente com a filtragem de eventos por qualquer parâmetro especificado acima
